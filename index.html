@@ -76,6 +76,16 @@ pl.addEventListener('mouseenter',function(){h.textContent='Open our GitHub'});pl
 function r(){c.width=innerWidth;c.height=innerHeight;s=[];for(var i=0;i<160;i++)s.push({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*1.4+.2,p:Math.random()*6})}
 function d(t){x.clearRect(0,0,c.width,c.height);s.forEach(function(a){x.globalAlpha=.4+.6*Math.abs(Math.sin(t/1200+a.p));x.fillStyle=a.r>1.2?'#ffb77a':'#cfc6ff';x.beginPath();x.arc(a.x,a.y,a.r,0,7);x.fill()});requestAnimationFrame(d)}
 addEventListener('resize',r);r();d(0)})();
+document.addEventListener('keydown', function (event) {
+    if (
+        event.key === 'F12' ||
+        (event.ctrlKey && event.key === 'U') ||
+        (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J'))
+    ) {
+        event.preventDefault();
+    }
+});
+
 </script>
 </body>
 </html>
